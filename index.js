@@ -7,24 +7,21 @@ import {
 } from "@interledger/open-payments";
 import { read } from "fs";
 import readline from "readline/promises";
-// Open Payments Client => https://ilp.interledger-test.dev/workshop
-// Sender => https://ilp.interledger-test.dev/alma
-// Receiver => https://ilp.interledger-test.dev/bob_marley
 
 (async () => {
   const client = await createAuthenticatedClient({
-    walletAddressUrl: "https://ilp.interledger-test.dev/workshop",
+    walletAddressUrl: "PASTE YOUR CLIENT WA",
     privateKey: "private.key",
-    keyId: "d23c5ee2-9ffd-4227-9e28-e1a132f75107",
+    keyId: "PASTE YOUR KEYID",
   });
 
   // 1. Fetch sender and receiver address
   const senderWA = await client.walletAddress.get({
-    url: "https://ilp.interledger-test.dev/alma",
+    url: "PASTE YOUR SENDER WA",
   });
 
   const receiverWA = await client.walletAddress.get({
-    url: "https://ilp.interledger-test.dev/bob_marley",
+    url: "PASTE YOUR RECEIVER WA",
   });
 
   console.log({ senderWA, receiverWA });
